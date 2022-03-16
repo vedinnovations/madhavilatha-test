@@ -22,7 +22,7 @@
 				<h1 style="text-align:center">Drug 2</h1>
 				<form class="form-horizontal" action="">
 				
-					@foreach ($data['fields'] as $item=>$value )
+					@foreach ($data as $item=>$value )
 					<div class="form-group">									
 					<label class="control-label col-sm-4">{{ $value['label'] }}</label>
 					<div class="col-sm-4">
@@ -58,7 +58,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script> 
 <script type="text/javascript">
 $(document).ready(function(){
-	var count = '<?php echo count($data['fields']);?>';
+	var count = '<?php echo count($data);?>';
     for(var i=0;i<count;i++)
 	{
 		requiredkey = $('.drug-'+i).attr('requiredkey');
